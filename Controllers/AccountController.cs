@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TableTap.Models;
 
 namespace TableTap.Controllers
 {
@@ -14,5 +15,19 @@ namespace TableTap.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            ModelState.AddModelError("", "Account verification is not connected yet.");
+            return View(model);
+        }
+
     }
 }
