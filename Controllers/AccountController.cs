@@ -29,5 +29,11 @@ namespace TableTap.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
     }
 }
