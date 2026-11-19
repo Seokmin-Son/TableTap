@@ -25,7 +25,7 @@
         <div class="border p-4 mx-auto" style="max-width: 360px;">
             <h1 class="h5 fw-bold mb-4">Admin Sign Up</h1>
 
-            <form asp-controller="Account" asp-action="SignUp" method="post">
+            <form id="signup-form" asp-controller="Account" asp-action="SignUp" method="post">
                 <div class="mb-3">
                     <label asp-for="Username" class="form-label"></label>
                     <input asp-for="Username" class="form-control" autocomplete="username" />
@@ -53,6 +53,8 @@
                     <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
                 </div>
 
+                <div id="message" class="text-danger small mb-2"></div>
+
                 <button type="submit" class="btn btn-outline-dark w-100" disabled>
                     Sign Up
                 </button>
@@ -66,5 +68,6 @@
             </div>
         </div>
     </main>
+    <script type="module" src="~/js/Register.js"></script>
 </body>
 </html>
